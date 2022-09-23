@@ -3,13 +3,18 @@ import { useState, useEffect } from "react"
 
 export default function CardDisplay(props) {
   const {num} = props
-  const imageArray = ['cat', 'dog', 'smile', 'banana', 'frown', 'banana', 'cat', 'dog', 'smile', 'banana', 'frown', 'banana']
+  const imageArray = ['cat', 'dog', 'smile', 'banana', 'frown', 'banana', 'cat', 'dog', 'smile', 'banana', 'frown', 'banana', 'apple', 'apple', 'pineapple', 'pineapple', 'orange', 'orange', 'mug', 'mug', 'laptop', 'laptop', 'lamp', 'lamp', 'book', 'book', 'elephant', 'elephant', 'rose', 'rose']
 
   let cardArray = []
 
-  for (let i = 0; i < num; i++) {
-    cardArray.push({display: 'back', img: imageArray[i]})
-  }
+
+
+    for (let i = 0; i < num; i++) {
+      cardArray.push({display: 'back', img: imageArray[i]})
+    }
+
+
+
 
   const [cardState, setCardState] = useState(cardArray)
   const [flippedArray, setFlippedArray] = useState([])
