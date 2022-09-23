@@ -13,8 +13,12 @@ function App() {
         ? 
         <CardDisplay num={state.num} end={state.end} setState={setState}/> 
         :
-        <div><button onClick={() => setState((prev) => ({...prev, num: 12}))}>12</button>
-        <button onClick={() => setState((prev) => ({...prev, num: 30}))}>30</button></div> 
+        <div>
+          <button onClick={() => setState((prev) => ({...prev, num: 12}))}>12</button>
+          <button onClick={() => setState((prev) => ({...prev, num: 24}))}>24</button>
+          <button onClick={() => setState((prev) => ({...prev, num: 30}))}>30</button>
+          <button onClick={() => setState((prev) => ({...prev, num: 48}))}>48</button>
+          </div> 
       }
     </div>
     
