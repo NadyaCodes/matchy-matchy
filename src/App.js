@@ -6,6 +6,10 @@ import CardDisplay from './CardDisplay';
 function App() {
   const [state, setState] = useState({num: 0, end: false})
 
+  const selectNum = (number) => {
+    setState((prev) => ({...prev, num: number}))
+  }
+
 
   return (
     <div>
@@ -14,10 +18,10 @@ function App() {
         <CardDisplay num={state.num} end={state.end} setState={setState}/> 
         :
         <div>
-          <button onClick={() => setState((prev) => ({...prev, num: 12}))}>12</button>
-          <button onClick={() => setState((prev) => ({...prev, num: 24}))}>24</button>
-          <button onClick={() => setState((prev) => ({...prev, num: 30}))}>30</button>
-          <button onClick={() => setState((prev) => ({...prev, num: 48}))}>48</button>
+          <button onClick={() => selectNum(12)}>12</button>
+          <button onClick={() => selectNum(24)}>24</button>
+          <button onClick={() => selectNum(30)}>30</button>
+          <button onClick={() => selectNum(48)}>48</button>
           </div> 
       }
     </div>
