@@ -3,11 +3,12 @@ import { useState, useEffect } from "react"
 
 export default function CardDisplay(props) {
   const {num} = props
+  const imageArray = ['cat', 'dog', 'smile', 'banana', 'frown', 'banana', 'cat', 'dog', 'smile', 'banana', 'frown', 'banana']
 
   let cardArray = []
 
   for (let i = 0; i < num; i++) {
-    cardArray.push({back: false, img: 'image'})
+    cardArray.push({display: 'back', img: imageArray[i]})
   }
 
   const [cardState, setCardState] = useState(cardArray)
@@ -15,13 +16,13 @@ export default function CardDisplay(props) {
 
   const flip = (index) => {
     const newState = [...cardState]
-    newState[index].back = true
+    newState[index].display = 'front'
     setCardState(newState)
     setFlippedArray((prev) => [...prev, index])
   }
 
   const cardDisplay = cardState.map((card, index) => {
-    return <Card key={index} id={index} back={card.back} img={card.image} flip={() => flip(index)} />
+    return <Card key={index} id={index} display={card.display} img={card.img} flip={() => flip(index)} />
   })
 
 
@@ -33,7 +34,7 @@ useEffect(() => {
     }, 500)
   }
 
-}, [flippedArray])
+}, [flippedArray, cardArray])
 
 
   let displayClass = `cardDisplay-${num}`

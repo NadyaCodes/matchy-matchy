@@ -2,29 +2,29 @@ import { useState } from "react"
 
 
 export default function Card(props) {
-  // const [back, setBack] = useState(true)
 
-  const {id, back, flip, img} = props
-  return(
-  // <div>
-  //   {props.back === true 
-  //   ? 
-  //   <div className='card card-back' onClick={() => setBack(false)}></div> 
-  //   : 
-  //   <div className='card card-front' onClick={() => setBack(true)}></div>}
+  const {id, display, flip, img} = props
 
-  //   {/* <div className='card'></div> */}
-  // </div>
+  switch(display) {
+    case 'back':
+      return <div className='card card-back' onClick={flip}></div> 
+    case 'front':
+      return <div className='card card-front' onClick={flip}>{img}</div>
+    case 'dead':
+      return <div className='card card-dead'></div> 
 
-<div>
-{back === false 
-? 
-<div className='card card-back' onClick={flip}></div> 
-: 
-<div className='card card-front' onClick={flip}></div>}
+  }
+//   return(
 
-{/* <div className='card'></div> */}
-</div>
+// <div>
+// {display === 'back' 
+// ? 
+// <div className='card card-back' onClick={flip}></div> 
+// : 
+// <div className='card card-front' onClick={flip}>{img}</div>}
+
+// {/* <div className='card'></div> */}
+// </div>
     
-  )
+//   )
 }

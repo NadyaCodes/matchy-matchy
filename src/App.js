@@ -4,7 +4,7 @@ import {useState} from 'react'
 import CardDisplay from './CardDisplay';
 
 function App() {
-  const [state, setState] = useState({num: 30})
+  const [state, setState] = useState({num: 12})
   return (
     <div>
       <button onClick={() => setState((prev) => ({...prev, num: 12}))}>12</button>

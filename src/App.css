@@ -9,6 +9,10 @@
   background-color: blue;
 }
 
+.card-dead {
+  background-color: grey;
+}
+
 .card-front {
   /* background-color: red; */
 }
