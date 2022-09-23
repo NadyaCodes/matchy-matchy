@@ -1,9 +1,10 @@
 import Card from "./Card"
+import End from "./End"
 import { useState, useEffect } from "react"
 import { makeImageArray } from "./helpers"
 
 export default function CardDisplay(props) {
-  const {num} = props
+  const {num, end, setState} = props
   const imageArray = makeImageArray(num)
   let cardArray = []
 
@@ -16,6 +17,7 @@ export default function CardDisplay(props) {
 
   const [cardState, setCardState] = useState(cardArray)
   const [flippedArray, setFlippedArray] = useState([])
+  let [deadCards, setDeadCards] = useState(0)
 
   const flip = (index) => {
     const newState = [...cardState]
@@ -30,8 +32,12 @@ export default function CardDisplay(props) {
       const deadIndex = cardState.findIndex(element => { return element.display === 'front'})
       deadState[deadIndex].display = 'dead'
 
-        setCardState(deadState)
-        setFlippedArray([])
+      setCardState(deadState)
+      setFlippedArray([])
+      setDeadCards(deadCards += 2)
+      if (deadCards >= num) {
+        setState((prev) => ({...prev, end: true}))
+      }
       }, 500)
     }
 
@@ -46,6 +52,9 @@ export default function CardDisplay(props) {
         setFlippedArray([])
       }, 500)
     }
+
+
+
   }
 
   const cardDisplay = cardState.map((card, index) => {
@@ -57,6 +66,8 @@ export default function CardDisplay(props) {
   let displayClass = `cardDisplay-${num}`
 
   return(
-    <div className={displayClass}>{cardDisplay}</div>
+    <div>
+    {end === false ? <div className={displayClass}>{cardDisplay}</div> : <End num={num} setState={setState}/>}
+    </div>
   )
 }
