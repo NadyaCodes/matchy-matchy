@@ -65,9 +65,13 @@ export default function CardDisplay(props) {
 
   let displayClass = `cardDisplay-${num}`
 
+  const reset = () => {
+    setState((prev) => ({...prev, num: 0, end: false}))
+  }
+
   return(
     <div>
-    {end === false ? <div className={displayClass}>{cardDisplay}</div> : <End num={num} setState={setState}/>}
+    {end === false ? <div className={displayClass}>{cardDisplay}<div><button onClick={() => reset()}>Go Back</button></div></div> : <End num={num} setState={setState}/>}
     </div>
   )
 }
