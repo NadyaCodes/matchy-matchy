@@ -11,7 +11,7 @@ function App() {
     <div>
       {state.num > 1 
         ? 
-        <CardDisplay num={state.num} /> 
+        <CardDisplay num={state.num}/> 
         :
         <div><button onClick={() => setState((prev) => ({...prev, num: 12}))}>12</button>
         <button onClick={() => setState((prev) => ({...prev, num: 30}))}>30</button></div> 

@@ -14,17 +14,4 @@ export default function Card(props) {
       return <div className='card card-dead'></div> 
 
   }
-//   return(
-
-// <div>
-// {display === 'back' 
-// ? 
-// <div className='card card-back' onClick={flip}></div> 
-// : 
-// <div className='card card-front' onClick={flip}>{img}</div>}
-
-// {/* <div className='card'></div> */}
-// </div>
-    
-//   )
 }
