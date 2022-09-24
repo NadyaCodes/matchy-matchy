@@ -15,6 +15,10 @@
 
 .card-front {
   /* background-color: red; */
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cardDisplay-12 {

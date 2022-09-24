@@ -17,7 +17,8 @@ const randomize = (num, arr) => {
 
 export function makeImageArray(num) {
   const totalImages = num / 2;
-  const imageOptions = ['cat', 'dog', 'smile', 'banana', 'frown', 'apple', 'pineapple', 'orange', 'mug', 'laptop', 'lamp', 'book', 'elephant', 'rose', 'lily', 'daisy', 'headphones', 'puzzle', 'desk', 'chair', 'ball', 'blanket', 'pillow', 'shampoo', 'plate', 'pot', 'teddy bear', 'skirt', 'dress', 'basket']
+  // const imageOptions = ['cat', 'dog', 'smile', 'banana', 'frown', 'apple', 'pineapple', 'orange', 'mug', 'laptop', 'lamp', 'book', 'elephant', 'rose', 'lily', 'daisy', 'headphones', 'puzzle', 'desk', 'chair', 'ball', 'blanket', 'pillow', 'shampoo', 'plate', 'pot', 'teddy bear', 'skirt', 'dress', 'basket']
+  const imageOptions = ['😄', '😉', '🥰', '😍', '🤩', '🤪', '😐', '🤭', '🤔', '😏', '🤥', '😴', '🥴', '😵‍💫', '🤑', '🥳', '🤠', '🥸', '😎', '🧐', '😲', '😳', '🥺', '😇', '🤒', '🤣', '😙', '🤫', '😮‍💨', '😶']
   const imageArray = randomize(totalImages, imageOptions)
   const doubledImageArray = [...imageArray, ...imageArray]
   const shuffledArray = randomize(num, doubledImageArray)
