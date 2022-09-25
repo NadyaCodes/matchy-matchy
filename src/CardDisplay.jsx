@@ -2,6 +2,7 @@ import Card from "./Card"
 import End from "./End"
 import { useState, useEffect } from "react"
 import { makeImageArray } from "./helpers"
+import Countdown from "./Countdown"
 
 export default function CardDisplay(props) {
   const {num, end, setState} = props
@@ -71,7 +72,8 @@ export default function CardDisplay(props) {
 
   return(
     <div>
-    {end === false ? <div className={displayClass}>{cardDisplay}<div><button onClick={() => reset()}>Go Back</button></div></div> : <End num={num} setState={setState}/>}
+    {end === false ? <div className={displayClass}>{cardDisplay}<div><button onClick={() => reset()}>Go Back</button></div></div> : <End num={num} setState={setState} phrase="Tadaa"/>}
+    <Countdown time={200} setState={setState} num={num}/>
     </div>
   )
 }

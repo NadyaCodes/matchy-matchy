@@ -1,5 +1,5 @@
 export default function End(props) {
-  const {num, setState} = props
+  const {num, setState, phrase} = props
 
   setTimeout(() => {
     setState((prev) => ({...prev, num: 0, end: false}))
@@ -7,7 +7,7 @@ export default function End(props) {
 
   return(
     <div>
-      Tadaa!!!
+      {phrase}
     </div>
   )
 }
