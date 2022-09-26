@@ -7,7 +7,7 @@ export default function Countdown(props) {
 
   useEffect(() => {
     count > 0 && setTimeout(() => (setCount(count - 1)), 300)
-    count === 0 && setState((prev) => ({...prev, lose: true}))
+    // count === 0 && setState((prev) => ({...prev, lose: true}))
 
   }, [count])
 

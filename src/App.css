@@ -48,3 +48,13 @@
   column-gap: 10px;
   row-gap: 15px;
 }
+
+.end {
+  background-color: white;
+  z-index: 3;
+  padding: 10rem;
+  border: 3rem solid black;
+  position: absolute;
+  top: 0;
+  margin: auto;
+}

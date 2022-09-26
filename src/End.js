@@ -3,10 +3,10 @@ export default function End(props) {
 
   setTimeout(() => {
     setState((prev) => ({...prev, num: 0, end: false}))
-  }, 1000)
+  }, 3000)
 
   return(
-    <div>
+    <div className='end'>
       {phrase}
     </div>
   )

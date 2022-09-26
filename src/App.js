@@ -4,7 +4,7 @@ import {useState} from 'react'
 import CardDisplay from './CardDisplay';
 
 function App() {
-  const [state, setState] = useState({num: 0, end: false, lose: false})
+  const [state, setState] = useState({num: 0, end: false})
 
   const selectNum = (number) => {
     setState((prev) => ({...prev, num: number}))
