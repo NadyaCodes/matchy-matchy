@@ -17,12 +17,16 @@ function App() {
         ? 
         <CardDisplay num={state.num} end={state.end} setState={setState}/> 
         :
-        <div>
-          <button onClick={() => selectNum(12)}>12</button>
-          <button onClick={() => selectNum(24)}>24</button>
-          <button onClick={() => selectNum(30)}>30</button>
-          <button onClick={() => selectNum(48)}>48</button>
-          </div> 
+        <div className='number-select'>
+          <h1> How Many Cards? </h1>
+          <div>
+            <button className='num-button' title='Easy' onClick={() => selectNum(12)}>12</button>
+            {/* <div><button className='num-button' onClick={() => selectNum(12)}>12</button><section className='type-text'>Easy</section></div> */}
+            <button className='num-button' onClick={() => selectNum(24)}>24</button>
+            <button className='num-button' onClick={() => selectNum(30)}>30</button>
+            <button className='num-button' onClick={() => selectNum(48)}>48</button>
+          </div>
+        </div> 
       }
     </div>
     
