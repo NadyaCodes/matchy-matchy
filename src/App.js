@@ -19,12 +19,11 @@ function App() {
         :
         <div className='number-select'>
           <h1> How Many Cards? </h1>
-          <div>
-            <button className='num-button' title='Easy' onClick={() => selectNum(12)}>12</button>
-            {/* <div><button className='num-button' onClick={() => selectNum(12)}>12</button><section className='type-text'>Easy</section></div> */}
-            <button className='num-button' onClick={() => selectNum(24)}>24</button>
-            <button className='num-button' onClick={() => selectNum(30)}>30</button>
-            <button className='num-button' onClick={() => selectNum(48)}>48</button>
+          <div className='button-options'>
+            <div className='num-container'><section className='type'>😊</section><button className='num-button' onClick={() => selectNum(12)}>12</button></div>
+            <div className='num-container'><section className='type'>😬😬</section><button className='num-button' onClick={() => selectNum(24)}>24</button></div>
+            <div className='num-container'><section className='type'>😳😳😳</section><button className='num-button' onClick={() => selectNum(30)}>30</button></div>
+            <div className='num-container'><section className='type'>😱😱😱😱</section><button className='num-button' onClick={() => selectNum(48)}>48</button></div>
           </div>
         </div> 
       }
