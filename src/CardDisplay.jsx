@@ -72,8 +72,8 @@ export default function CardDisplay(props) {
 
   return(
     <div>
-      <div className='time-banner'>Time Left: <Countdown time={200} setState={setState} num={num}/></div>
-      {end === false ? <div className={displayClass}>{cardDisplay}<div><button className='back-button' onClick={() => reset()}>Go Back</button></div></div> : <End num={num} setState={setState} phrase="Tadaa"/>}
+      <div className='time-banner'>Time Left: &nbsp; <Countdown time={200} setState={setState} num={num}/></div>
+      {end === false ? <div className={displayClass}>{cardDisplay}<section><button className='back-button' onClick={() => reset()}>&#xab; Go Back &#xab; </button></section></div> : <End num={num} setState={setState} phrase="Tadaa"/>}
     </div>
   )
 }

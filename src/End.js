@@ -7,7 +7,7 @@ export default function End(props) {
 
   return(
     <div className='end'>
-      {phrase}
+      <h1 className='end-phrase'>{phrase}</h1>
     </div>
   )
 }
