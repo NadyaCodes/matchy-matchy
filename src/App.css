@@ -29,33 +29,33 @@
   justify-content: center;
 }
 
-.cardDisplay-12 {
+.cardDisplay {
   display: grid;
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.cardDisplay-12-vertical {
   grid-template-columns: 50px 50px 50px;
-  column-gap: 10px;
-  row-gap: 15px;
 }
 
-.cardDisplay-24 {
-  display: grid;
+.cardDisplay-24-vertical, .cardDisplay-12-horizontal {
   grid-template-columns: 50px 50px 50px 50px;
-  column-gap: 10px;
-  row-gap: 15px;
 }
 
-.cardDisplay-30 {
-  display: grid;
+.cardDisplay-30-vertical {
   grid-template-columns: 50px 50px 50px 50px 50px;
-  column-gap: 10px;
-  row-gap: 15px;
 }
 
-.cardDisplay-48 {
-  display: grid;
+.cardDisplay-48-vertical, .cardDisplay-24-horizontal, .cardDisplay-30-horizontal {
   grid-template-columns: 50px 50px 50px 50px 50px 50px;
-  column-gap: 10px;
-  row-gap: 15px;
 }
+
+
+.cardDisplay-48-horizontal {
+  grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px;
+}
+
 
 .end {
   background-color: #f5d549;

@@ -6,7 +6,7 @@ import Countdown from "./Countdown"
 import { calcTime } from "./helpers"
 
 export default function CardDisplay(props) {
-  const {num, end, setState} = props
+  const {num, end, setState, state} = props
   const imageArray = makeImageArray(num)
   let cardArray = []
 
@@ -64,17 +64,25 @@ export default function CardDisplay(props) {
   })
 
 
-
-  let displayClass = ` cardDisplay cardDisplay-${num}`
+  let displayClass = ` cardDisplay cardDisplay-${num}-${state.direction}`
 
   const reset = () => {
     setState((prev) => ({...prev, num: 0, end: false}))
+  }
+
+  const setDirection = () => {
+    if (state.direction === 'vertical') {
+      setState((prev) => ({...prev, direction: 'horizontal'}))
+    } else {
+      setState((prev) => ({...prev, direction: 'vertical'}))
+    }
   }
 
 
   return(
     <div>
       <div className='time-banner'>Time Left: &nbsp; <Countdown time={calcTime(num)} setState={setState} num={num}/></div>
+      <button onClick={() => setDirection()} className='num-button'> Direction</button>
       {end === false ? <div className={displayClass}>{cardDisplay}<section><button className='back-button' onClick={() => reset()}>&#xab; Go Back &#xab; </button></section></div> : <End num={num} setState={setState} phrase="Tadaa"/>}
     </div>
   )
