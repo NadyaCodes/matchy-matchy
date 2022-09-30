@@ -3,6 +3,7 @@ import End from "./End"
 import { useState, useEffect } from "react"
 import { makeImageArray } from "./helpers"
 import Countdown from "./Countdown"
+import { calcTime } from "./helpers"
 
 export default function CardDisplay(props) {
   const {num, end, setState} = props
@@ -70,9 +71,10 @@ export default function CardDisplay(props) {
     setState((prev) => ({...prev, num: 0, end: false}))
   }
 
+
   return(
     <div>
-      <div className='time-banner'>Time Left: &nbsp; <Countdown time={200} setState={setState} num={num}/></div>
+      <div className='time-banner'>Time Left: &nbsp; <Countdown time={calcTime(num)} setState={setState} num={num}/></div>
       {end === false ? <div className={displayClass}>{cardDisplay}<section><button className='back-button' onClick={() => reset()}>&#xab; Go Back &#xab; </button></section></div> : <End num={num} setState={setState} phrase="Tadaa"/>}
     </div>
   )

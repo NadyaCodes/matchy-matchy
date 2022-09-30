@@ -25,3 +25,19 @@ export function makeImageArray(num) {
 
  return shuffledArray
 }
+
+
+export function calcTime(num) {
+  switch(num) {
+    case 12:
+      return 100
+    case 24:
+      return 200
+    case 30:
+      return 300
+    case 48:
+      return 400
+    default:
+      return 300
+  }
+}

@@ -23,7 +23,7 @@
 }
 
 .card-front {
-  font-size: 3rem;
+  font-size: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +62,6 @@
   color: black;
   z-index: 3;
   padding: 5rem;
-  border: 2rem solid black;
   position: absolute;
   top: 0;
   left: 0;
@@ -139,6 +138,11 @@ box-shadow: 0px 10px 13px -7px #000000, -4px 3px 23px 6px rgba(130,122,86,0.59);
   border: .07rem solid black;
   padding: 1rem;
   width: 200px;
+}
+
+.back-button:hover {
+  background-color: #000000;
+  color: #fdeda8;
 }
 
 .time-banner {
