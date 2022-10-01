@@ -83,7 +83,6 @@ export default function CardDisplay(props) {
   return(
     <div>
       <div className='time-banner'>Time Left: &nbsp; <Countdown time={calcTime(num)} setState={setState} num={num}/></div>
-      {/* <button onClick={() => setDirection()} className='num-button'> Direction</button> */}
       <Switch leftElement='vertical' rightElement='horizontal' selected={state.direction} onClick={() => setSwitch()}/>
       {end === false ? <div className={displayClass}>{cardDisplay}<section><button className='back-button' onClick={() => reset()}>&#xab; Go Back &#xab; </button></section></div> : <End num={num} setState={setState} phrase="Tadaa"/>}
     </div>

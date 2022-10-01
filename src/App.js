@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react'
 import CardDisplay from './CardDisplay';
+import Switch from './Switch';
 
 function App() {
   const [state, setState] = useState({num: 0, end: false, view: 'light', direction: 'vertical'})
@@ -10,9 +11,18 @@ function App() {
     setState((prev) => ({...prev, num: number}))
   }
 
+  const setSwitch = () => {
+    if (state.view === 'light') {
+      setState((prev) => ({...prev, view: 'dark'}))
+    } else {
+      setState((prev) => ({...prev, view: 'light'}))
+    }
+  }
+
 
   return (
-    <div>
+    <div className={state.view}>
+      <Switch leftElement='light' rightElement='dark' selected={state.view} onClick={() => setSwitch()}/>
       {state.num > 1 
         ? 
         <CardDisplay num={state.num} end={state.end} setState={setState} state={state}/> 
