@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { makeImageArray } from "./helpers"
 import Countdown from "./Countdown"
 import { calcTime } from "./helpers"
+import Switch from "./Switch"
 
 export default function CardDisplay(props) {
   const {num, end, setState, state} = props
@@ -70,7 +71,7 @@ export default function CardDisplay(props) {
     setState((prev) => ({...prev, num: 0, end: false}))
   }
 
-  const setDirection = () => {
+  const setSwitch = () => {
     if (state.direction === 'vertical') {
       setState((prev) => ({...prev, direction: 'horizontal'}))
     } else {
@@ -82,7 +83,8 @@ export default function CardDisplay(props) {
   return(
     <div>
       <div className='time-banner'>Time Left: &nbsp; <Countdown time={calcTime(num)} setState={setState} num={num}/></div>
-      <button onClick={() => setDirection()} className='num-button'> Direction</button>
+      {/* <button onClick={() => setDirection()} className='num-button'> Direction</button> */}
+      <Switch leftElement='vertical' rightElement='horizontal' selected={state.direction} onClick={() => setSwitch()}/>
       {end === false ? <div className={displayClass}>{cardDisplay}<section><button className='back-button' onClick={() => reset()}>&#xab; Go Back &#xab; </button></section></div> : <End num={num} setState={setState} phrase="Tadaa"/>}
     </div>
   )
