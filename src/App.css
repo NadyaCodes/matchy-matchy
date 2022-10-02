@@ -195,7 +195,7 @@ div.time-banner > div {
   display: inline-block;
   width: 60px;
   height: 34px;
-  background-color: grey;
+  background-color: #bc9d12;
   border-radius: 1rem;
 }
 
@@ -205,7 +205,7 @@ div.time-banner > div {
   width: 30px;
   top: 2px;
   border-radius: 50%;
-  background-color:#bc9d12;
+  background-color:#fdeda8;
 }
 
 .switchLeft {
@@ -216,6 +216,10 @@ div.time-banner > div {
   left: 28px;
 }
 
+#root > div > div:nth-child(2) > div.switch {
+  justify-content: right;
+}
+
 
 
 /* theme */
@@ -223,3 +227,4 @@ div.time-banner > div {
 .dark {
   background-color: #000000;
 }
+
