@@ -27,7 +27,13 @@
 }
 
 .card-dead {
-  background-color: grey;
+  background-color: #bc9d12;
+  border-color: rgb(144, 1, 1);
+}
+
+.card-dead:hover {
+  box-shadow: none;
+  -webkit-box-shadow: none
 }
 
 .card-front {
