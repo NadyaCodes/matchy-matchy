@@ -13,7 +13,7 @@ export default function Countdown(props) {
 
   return(
     <div>{count > 0 && count}
-    {count === 0 && <End phrase="boo - you lose" num={num} setState={setState}/>}
+    {count === 0 && <End phrase="😭 Boo - You Lose! 😭" num={num} setState={setState}/>}
     </div>
   )
 }
