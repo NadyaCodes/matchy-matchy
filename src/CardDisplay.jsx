@@ -20,15 +20,18 @@ export default function CardDisplay(props) {
 
   const [cardState, setCardState] = useState(cardArray)
   const [flippedArray, setFlippedArray] = useState([])
+  const [pauseClicks, setPauseClicks] = useState(false)
   let [deadCards, setDeadCards] = useState(0)
 
   const flip = (index) => {
+    setPauseClicks(true)
     const newState = [...cardState]
     newState[index].display = 'front'
     setCardState(newState)
     setFlippedArray((prev) => [...prev, newState[index]])
 
     if (flippedArray.length > 0 && cardState[index].img === flippedArray[0].img) {
+      // setPauseClicks(true)
       setTimeout(() => {
       const deadState = [...cardState]
       deadState[index].display = 'dead'
@@ -41,11 +44,12 @@ export default function CardDisplay(props) {
       if (deadCards >= num) {
         setState((prev) => ({...prev, end: true}))
       }
+      setPauseClicks(false)
       }, 500)
     }
 
-
     else if (flippedArray.length > 0) {
+      // setPauseClicks(false)
       setTimeout(() => {
         const revertState = [...cardState]
         revertState[index].display = 'back'
@@ -53,15 +57,21 @@ export default function CardDisplay(props) {
         revertState[lastIndex].display = 'back'
         setCardState(revertState)
         setFlippedArray([])
+        setPauseClicks(false)
       }, 500)
+    } else {
+      setTimeout(() => {
+        setPauseClicks(false)
+      }, 100)
+
     }
 
-
+    // setPauseClicks(false)
 
   }
 
   const cardDisplay = cardState.map((card, index) => {
-    return <Card key={index} id={index} display={card.display} img={card.img} flip={() => flip(index)} />
+    return <Card key={index} id={index} display={card.display} img={card.img} flip={() => flip(index)}/>
   })
 
 
@@ -82,6 +92,7 @@ export default function CardDisplay(props) {
 
   return(
     <div>
+      {pauseClicks === true && <div className='pause'></div>}
       <div className='time-banner'>Time Left: &nbsp; <Countdown time={calcTime(num)} setState={setState} num={num}/></div>
       <Switch leftElement='vertical' rightElement='horizontal' selected={state.direction} onClick={() => setSwitch()}/>
       {end === false ? <div className={displayClass}>{cardDisplay}<section><button className='back-button' onClick={() => reset()}>&#xab; Go Back &#xab; </button></section></div> : <End num={num} setState={setState} phrase="🥳 Tadaa! 🥳"/>}
