@@ -24,7 +24,7 @@
 
 .card-back {
   background-color: #f5d549;
-  animation: flip .3s linear; 
+  animation: flip .3s ease; 
 }
 
 @keyframes flip{
@@ -38,8 +38,8 @@
 
 .card-dead {
   background-color: #bc9d12;
-  border-color: rgb(144, 1, 1);
-  animation: flip .3s linear; 
+  border-color: black;
+  animation: flip .3s ease; 
 }
 
 .card-dead:hover {
@@ -52,6 +52,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: flipback .3s ease; 
+}
+
+@keyframes flipback{
+  from{
+   transform: rotateY(-90deg);
+
+ }
+  to{
+    transform: rotateY(0deg);
+ }
 }
 
 .cardDisplay {
