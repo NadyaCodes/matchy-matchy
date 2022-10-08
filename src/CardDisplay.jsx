@@ -14,7 +14,7 @@ export default function CardDisplay(props) {
 
 
   for (let i = 0; i < num; i++) {
-    cardArray.push({display: 'back', img: imageArray[i]})
+    cardArray.push({display: 'back', img: imageArray[i], id: i})
   }
 
 
@@ -30,8 +30,7 @@ export default function CardDisplay(props) {
     setCardState(newState)
     setFlippedArray((prev) => [...prev, newState[index]])
 
-    if (flippedArray.length > 0 && cardState[index].img === flippedArray[0].img) {
-      // setPauseClicks(true)
+    if (flippedArray.length > 0 && cardState[index].img === flippedArray[0].img && flippedArray[0].id !== cardState[index].id) {
       setTimeout(() => {
       const deadState = [...cardState]
       deadState[index].display = 'dead'
@@ -48,8 +47,7 @@ export default function CardDisplay(props) {
       }, 500)
     }
 
-    else if (flippedArray.length > 0) {
-      // setPauseClicks(false)
+    else if (flippedArray.length > 0 && flippedArray[0].id !== cardState[index].id) {
       setTimeout(() => {
         const revertState = [...cardState]
         revertState[index].display = 'back'
@@ -65,8 +63,6 @@ export default function CardDisplay(props) {
       }, 100)
 
     }
-
-    // setPauseClicks(false)
 
   }
 
