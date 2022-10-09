@@ -10,6 +10,72 @@
   min-height: 100vh
 }
 
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.title > span {
+  padding: .8rem;
+  animation: bounce infinite .8s linear;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(0rem, -1rem);
+  }
+  25% {
+    transform: translate(.5rem, 1rem) rotate(15deg)
+  }
+  50% {
+    transform: translate(0rem, -1rem);
+  }
+  75% {
+    transform: translate(-.5rem, 1rem) rotate(-15deg)
+  }
+  100% {
+    transform: translate(0rem, -1rem);
+  }
+}
+
+.title > span:nth-child(1) {
+  animation-delay: .3s;
+}
+
+.title > span:nth-child(2) {
+  animation-delay: .1s;
+}
+
+.title > span:nth-child(3) {
+  animation-delay: .4s;
+}
+
+.title > span:nth-child(4) {
+  animation-delay: .2s;
+}
+
+.title > span:nth-child(5) {
+  animation-delay: .5s;
+}
+
+.title > span:nth-child(6) {
+  animation-delay: .3s;
+}
+
+.title > span:nth-child(7) {
+  animation-delay: .1s;
+}
+
+.title > span:nth-child(8) {
+  animation-delay: .4s;
+}
+
+.title > span:nth-child(9) {
+  animation-delay: .2s;
+}
+
 .card {
   width: 50px;
   height: 70px;

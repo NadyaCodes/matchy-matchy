@@ -3,6 +3,7 @@ import './App.css';
 import {useState} from 'react'
 import CardDisplay from './CardDisplay';
 import Switch from './Switch';
+import Title from './Title';
 
 function App() {
   const [state, setState] = useState({num: 0, end: false, view: 'light', direction: 'vertical'})
@@ -27,6 +28,8 @@ function App() {
         ? 
         <CardDisplay num={state.num} end={state.end} setState={setState} state={state}/> 
         :
+        <div>
+          <Title />
         <div className='number-select'>
           <h1> How Many Cards? </h1>
           <div className='button-options'>
@@ -36,6 +39,7 @@ function App() {
             <div className='num-container'><section className='type'>😱😱😱😱</section><button className='num-button' onClick={() => selectNum(48)}>48</button></div>
           </div>
         </div> 
+        </div>
       }
     </div>
     
