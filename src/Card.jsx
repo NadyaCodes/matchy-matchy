@@ -1,9 +1,7 @@
-import { useState } from "react"
-
 
 export default function Card(props) {
 
-  const {id, display, flip, img } = props
+  const {display, flip, img } = props
 
     switch(display) {
       case 'back':

@@ -1,23 +1,23 @@
-import confetti from 'canvas-confetti';
+import confetti from "canvas-confetti";
 
 export default function End(props) {
-  const {num, setState, phrase} = props
+  const { setState, phrase } = props;
 
   setTimeout(() => {
-    setState((prev) => ({...prev, num: 0, end: false}))
-  }, 3000)
+    setState((prev) => ({ ...prev, num: 0, end: false }));
+  }, 3000);
 
-  if (phrase === '🥳 Tadaa! 🥳') {
+  if (phrase === "🥳 Tadaa! 🥳") {
     confetti({
       particleCount: 150,
       spread: 70,
-      origin: { y: 0.6 }
+      origin: { y: 0.6 },
     });
   }
 
-  return(
-    <div className='end'>
-      <h1 className='end-phrase'>{phrase}</h1>
+  return (
+    <div className="end">
+      <h1 className="end-phrase">{phrase}</h1>
     </div>
-  )
+  );
 }
