@@ -77,10 +77,10 @@
 }
 
 .card {
-  width: 50px;
-  height: 70px;
-  border: 0.3px solid black;
-  border-radius: 5px;
+  width: 3rem;
+  height: 4rem;
+  border: 0.05rem solid black;
+  border-radius: .3rem;
 }
 
 .card:hover {
@@ -134,31 +134,31 @@
 
 .cardDisplay {
   display: grid;
-  column-gap: 10px;
-  row-gap: 15px;
+  column-gap: .8rem;
+  row-gap: .8rem;
 }
 
 .cardDisplay-12-vertical {
-  grid-template-columns: 50px 50px 50px;
+  grid-template-columns: 3rem 3rem 3rem;
 }
 
 .cardDisplay-24-vertical,
 .cardDisplay-12-horizontal {
-  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-columns: 3rem 3rem 3rem 3rem;
 }
 
 .cardDisplay-30-vertical {
-  grid-template-columns: 50px 50px 50px 50px 50px;
+  grid-template-columns: 3rem 3rem 3rem 3rem 3rem;
 }
 
 .cardDisplay-48-vertical,
 .cardDisplay-24-horizontal,
 .cardDisplay-30-horizontal {
-  grid-template-columns: 50px 50px 50px 50px 50px 50px;
+  grid-template-columns: 3rem 3rem 3rem 3rem 3rem 3rem;
 }
 
 .cardDisplay-48-horizontal {
-  grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px;
+  grid-template-columns: 3rem 3rem 3rem 3rem 3rem 3rem 3rem 3rem;
 }
 
 .end {
