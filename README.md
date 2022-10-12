@@ -23,3 +23,9 @@ Dependencies include:
 ---
 
 ## Screenshots
+
+![Emoji match screenshot 1](https://github.com/NadyaCodes/matchy-matchy/blob/cc4f83241de260eb095062669e3e53c0576c8256/docs/Emoji-match-screenshot-1.png?raw=true)
+
+![Emoji match screenshot 2](https://github.com/NadyaCodes/matchy-matchy/blob/cc4f83241de260eb095062669e3e53c0576c8256/docs/Emoji-match-screenshot-2.png?raw=true)
+
+![Emoji match screenshot 3](https://github.com/NadyaCodes/matchy-matchy/blob/cc4f83241de260eb095062669e3e53c0576c8256/docs/Emoji-match-screenshot-3.png?raw=true)
